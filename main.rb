@@ -3,9 +3,22 @@ expression = File.read('expression.txt')
 left = 0
 right = 0
 
+# Retirar os '<' '>' das pontas que nunca formarão um diamante
+expression_sliced = expression
+j = 0
+while expression[j] == '>' do
+    expression_sliced.slice!(j)
+end
+
+j = expression_sliced.length - 1
+while expression[j] == '<' do
+    expression_sliced.slice!(j)
+    j -= 1
+end
+
 # Verificar qual possui a quantidade maior de repetições na expressão ('<' ou '>'), pois o que tiver menos será o máximo de diamantes
 # que serão possíveis de serem formados.
-(0..expression.length).each do |i|
+(0..expression_sliced.length).each do |i|
   left += 1 if expression[i] == '<'
   right += 1 if expression[i] == '>'
 end
