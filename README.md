@@ -10,7 +10,7 @@ docker-compose build
 Após gerar o build do projeto basta digitar o comando abaixo, permitindo que abra o terminal para digitar comandos linux e da linguagem.
 
 ```
-docker-compose run --service-ports --rm desafio bash
+docker-compose run desafio bash
 ```
 
 ## Execução do projeto
