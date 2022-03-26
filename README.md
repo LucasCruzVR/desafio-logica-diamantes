@@ -21,7 +21,6 @@ ruby main.rb
 
 - Extrair os diamantes e areias da expressão até que não haja mais o que ser extraído.
 - Exibir a quantidade de diamantes extraídos.
-- O projeto deve ser disponibilizado em um repositório aberto no GitHub
 
 ### **Dicas:**
 
@@ -32,7 +31,7 @@ ruby main.rb
 
 
 ## Utilizando o projeto com o docker
-Na raíz do projeto, gerar o build antes da execução.
+Na raíz do projeto, gere o build antes da execução com o comando abaixo. Lembrando que é necessário ter o docker e acesso ao docker-compose para a execução.
 
 ```
 docker-compose build
