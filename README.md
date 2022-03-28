@@ -11,11 +11,16 @@ Dado um conjunto de caracteres, é preciso extrair os "diamantes"  `<>` e as "ar
 A expressão que será analisada pelo algoritmo pode ser a acima citada ou qualquer outra que componha os lados do diamante e areias. Caso queira mudar a expressão basta apenas alterar o arquivo **"expression.txt"** para que a análise seja feita com a expressão personalizada.
 
 ## Execução do projeto
-O projeto se concentra no arquivo **main.rb** e pode ser executado com o comando abaixo. Caso queira alterar a expressão, basta no arquivo texto nomeado como **"expression.txt"**
+O projeto se concentra no arquivo **only_diamonds.rb** e **diamonds_sand.rb**, podendo serem executados com os comandos abaixo. Caso queira alterar a expressão, basta no arquivo texto nomeado como **"expression.txt"**.
 
 ```
-ruby main.rb
+ruby only_diamonds.rb
 ```
+```
+ruby diamonds_sand.rb
+```
+
+**Observação:** O arquivo only_diamonds exclui todos os diamantes mas pode deixar areias na expressão final, pois não atrapalharam na exclusão dos diamantes. Por outro lado, o diamonds_sand retira todas as areias, independente se atrapalhou na retirada dos diamantes ou não.
 
 ### **Requisitos:**
 
