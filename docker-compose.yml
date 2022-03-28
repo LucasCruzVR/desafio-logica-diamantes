@@ -6,5 +6,3 @@ services:
       context: "."
     volumes:
       - .:/diamantes
-    ports:
-      - "3000:3000"
