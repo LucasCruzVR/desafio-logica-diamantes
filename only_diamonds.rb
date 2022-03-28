@@ -1,3 +1,6 @@
+## Esse algoritmo retira todos os diamantes possíveis, mas apenas as areias que atrapalharem a retirar os diamantes. 
+## Assim podem restar areias na expressão final
+
 diamonds = 0
 expression = File.read('expression.txt')
 left = 0
@@ -32,30 +35,27 @@ elsif right > left
 end
 
 while @lowest_count != 0
-  (0..expression.length).each do |i|
+  k = 0
+  j = 0
+  (j..expression.length).each do |i|
     if expression[i] == '<' ## Trava em uma posição e percorre o caminho a frente para verificar se é um diamante
-      (i + 1..expression.length).each do |k|
-        if expression[k] == '>' ## Quando encontra um '>' antes de um '<' é porque existe um diamante para ser retirado
-          while true
-            if i + 1 == k ## Caso o diamante já esteja correto basta retirar
-              puts 'retirar diamante - ' + expression + ' - ' + 'i:' + i.to_s + '  ' + 'k:' + k.to_s
-              puts expression.slice!(k)
-              puts expression.slice!(i)
-              @lowest_count -= 1
-              diamonds += 1
-              # puts "saiu " + expression + ' - ' + expression.length.to_s
-              break
-            else  ## Caso existam areias no diamante, elas são retiradas antes
-              puts 'retirar areia - ' + expression + ' - ' + 'i:' + i.to_s + '  ' + 'k:' + k.to_s
-              puts expression.slice!(i + 1)
-              k -= 1
-            end
-          end
+      k = i
+    elsif expression[i] == '>' && expression[k] == '<' ## Quando encontra um '>' antes de um '<' é porque existe um diamante para ser retirado
+      while true
+        if i - 1 == k ## Caso o diamante já esteja correto basta retirar
+          puts 'retirar diamante - ' + expression + ' - ' + 'k:' + k.to_s + '  ' + 'i:' + i.to_s
+          puts expression.slice!(i)
+          puts expression.slice!(k)
+          @lowest_count -= 1
+          diamonds += 1
           break
-        elsif expression[k] == '<'
-          break
+        else  ## Caso existam areias no diamante, elas são retiradas antes
+          puts 'retirar areia - ' + expression + ' - ' + 'k:' + k.to_s + '  ' + 'i:' + i.to_s
+          puts expression.slice!(k+1)
+          i -= 1
         end
       end
+      break
     end
   end
 end
