@@ -17,7 +17,7 @@ O projeto se concentra no arquivo **only_diamonds.rb** e **diamonds_sand.rb**, p
 ruby only_diamonds.rb
 ```
 ```
-ruby diamonds_sand.rb
+ruby diamonds_sands.rb
 ```
 
 **Observação:** O arquivo only_diamonds exclui todos os diamantes mas pode deixar areias na expressão final, pois não atrapalharam na exclusão dos diamantes. Por outro lado, o diamonds_sand retira todas as areias, independente se atrapalhou na retirada dos diamantes ou não.
